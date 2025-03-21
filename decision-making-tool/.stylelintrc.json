@@ -1,0 +1,22 @@
+{
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-clean-order", "stylelint-prettier/recommended"],
+  "plugins": ["stylelint-order", "stylelint-scss"],
+  "stylelint.validate": ["css", "scss"],
+  "rules": {
+    "selector-class-pattern": null,
+    "font-family-no-duplicate-names": [
+      true,
+      {
+        "ignoreFontFamilyNames": ["monospace"]
+      }
+    ],
+    "scss/load-partial-extension": "always",
+    "custom-property-empty-line-before": "never",
+    "declaration-empty-line-before": "never",
+    "color-no-invalid-hex": true,
+    "unit-allowed-list": ["em", "rem", "px", "%", "s"],
+    "no-descending-specificity": null,
+    "order/properties-order": null
+  },
+  "ignoreFiles": ["node_modules/", "dist/", "build/"]
+}

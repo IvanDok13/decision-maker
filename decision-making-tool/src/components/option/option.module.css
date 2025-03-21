@@ -1,0 +1,50 @@
+.option {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(var(--color-primary-300), var(--color-primary-700));
+}
+
+.option-label,
+.option-title,
+.option-weight,
+.option-button-del {
+  background: var(--color-valid);
+  backdrop-filter: blur(12.5px);
+}
+
+.option-label {
+  cursor: pointer;
+  flex-shrink: 0;
+  /* width: 3rem; */
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  text-align: center;
+  box-shadow: 0 0 0.25rem 0.1rem var(--color-primary-200);
+}
+
+.option-title {
+  padding: 0.5rem;
+  border: none;
+  line-height: normal;
+  outline: none;
+}
+
+.option-weight {
+  padding: 0.5rem;
+  border: none;
+  line-height: normal;
+  outline: none;
+}
+
+.option-button-del {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+}
