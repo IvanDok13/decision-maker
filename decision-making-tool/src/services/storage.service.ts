@@ -1,4 +1,4 @@
-import type { OptionListValue, StorageKeys, TypeGuard } from '../types/types';
+import type { OptionListValue, StorageKeys } from '../types/types';
 
 export class StorageService {
   private static instance = new StorageService();
@@ -12,23 +12,19 @@ export class StorageService {
     return StorageService.instance;
   }
 
-  public saveOptions(key: StorageKeys, value: OptionListValue | boolean): void {
+  public saveOptions(key: StorageKeys, value: OptionListValue): void {
     const storageKey = this.prefix + key;
     globalThis.localStorage.setItem(storageKey, JSON.stringify(value));
   }
 
-  public loadOptions<T>(key: StorageKeys, typeGuard: TypeGuard<T>): T | null {
+  public loadOptions(key: StorageKeys): OptionListValue | null {
     const storageKey = this.prefix + key;
     const value = globalThis.localStorage.getItem(storageKey);
     if (!value) {
       return null;
     }
     try {
-      const parsedValue: unknown = JSON.parse(value);
-      if (typeGuard(parsedValue)) {
-        return parsedValue;
-      }
-      return null;
+      return JSON.parse(value);
     } catch {
       return null;
     }
